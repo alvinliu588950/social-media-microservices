@@ -1,0 +1,28 @@
+version: '3.7'
+
+services:
+  user-service:
+    build: ./user-service
+    volumes:
+      - ./user-service:/app/
+    ports:
+      - 50051:50051
+    command: ["./user-service"]
+    environment:
+      MICRO_ADDRESS: ":50051"
+      MICRO_REGISTRY: "mdns"
+      DB_NAME: "postgres"
+      DB_HOST: "postgresdb"
+      DB_PORT: "5432"
+      DB_USER: "postgres"
+      DB_PASSWORD: "postgres"
+    depends_on:
+      - postgresdb
+  
+  postgresdb:
+    image: postgres
+    ports:
+      - 5432:5432
+    volumes:
+      - ./postgres-data:/var/lib/postgresql/data
+
