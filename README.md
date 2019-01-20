@@ -11,6 +11,7 @@ Uses a number of open source projects to work properly:
 - protobuf
 - docker
 - docker-compose
+- gorm
 
 # Todo
 
