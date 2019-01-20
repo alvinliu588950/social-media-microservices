@@ -18,6 +18,16 @@ services:
       DB_PASSWORD: "postgres"
     depends_on:
       - postgresdb
+
+  user-cli:
+    build: ./user-cli
+    volumes:
+      - ./user-cli:/app/
+    command: ["./user-cli"]
+    environment:
+      MICRO_REGISTRY: "mdns"
+
+
   
   postgresdb:
     image: postgres
