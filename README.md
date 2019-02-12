@@ -2,6 +2,7 @@
 
 
 This is a demonstration of how to build a social media app just like instagram using microservices architecture with golang.
+(still in progress)
 
 # Dependency
 Uses a number of open source projects to work properly:
@@ -12,6 +13,4 @@ Uses a number of open source projects to work properly:
 - docker
 - docker-compose
 - gorm
-# Todo
 
-Explaination of how this app was built.
